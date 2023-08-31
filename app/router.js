@@ -1,4 +1,6 @@
 import { AboutController } from "./controllers/AboutController.js";
+import { GiftsController } from "./controllers/GiftsController.js";
+import { GiftsSandboxController } from "./controllers/GiftsSandboxController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
@@ -10,15 +12,10 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
-    view: /*html*/`
-    <div class="card">
-      <div class="card-body">
-        <p>Home Page</p>
-        <button class="btn btn-dark" onclick="app.HomeController.testButton()">😎</button>
-      </div>
-    </div>
-    `
+    controller: [GiftsController, GiftsSandboxController]
+    //     view: /*html*/`
+    //  this is the gift page
+    //     `
   },
   {
     path: '#/about',
@@ -34,7 +31,7 @@ export const router = [
 
 /**
  * Supporting types for the router
- * NOTE Controllers must be non instantiated 
+ * NOTE Controllers must be non instantiated
  * @typedef {{[x:string]:any}} controller
  * @typedef {{path: string, controller?:controller |controller[], view?: string, target?: string}} Route
  */

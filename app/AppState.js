@@ -4,6 +4,17 @@ import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
 
 class ObservableAppState extends EventEmitter {
+
+
+
+  /** @type {import('./models/Gift.js').Gift[]} */
+  sandboxGifts = []
+
+
+
+
+
+
   page = ''
   user = null
   /** @type {import('./models/Account.js').Account | null} */

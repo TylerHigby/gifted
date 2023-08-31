@@ -1,1 +1,13 @@
 /* BASIC STYLES HERE */
+
+.giftCard {
+    background-color: rgba(12, 81, 12, 0.897);
+    color: white;
+    height: 50vh
+}
+
+.theGiftsCard {
+    background-color: rgb(164, 205, 240);
+    color: black;
+    height: 50vh;
+}
