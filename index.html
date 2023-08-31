@@ -40,10 +40,10 @@
 
   <!-- SECTION -->
   <main>
-
-    <section id="auth-template">
-      <!-- TODO REMOVE THE AUTH TEMPLATE ONCE YOU VERIFY YOUR AUTH SETTINGS -->
-      <div class="container-fluid">
+    <!-- 
+    <section id="auth-template"> -->
+    <!-- TODO REMOVE THE AUTH TEMPLATE ONCE YOU VERIFY YOUR AUTH SETTINGS -->
+    <!-- <div class="container-fluid">
         <div class="row my-3">
           <div class="col-lg-5" id="auth-settings">
             <div class="card p-2 skeleton-loader">
@@ -62,10 +62,51 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="router-view">
       <!-- primary viewport -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4 p-3">
+            <div class="giftCard">
+              <div>
+                <p>Gifted</p>
+
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="tag">Tag</label>
+                  <input required type="text" class="form-control" id="tag" placeholder="Tag">
+
+                </div>
+                <div class="form-group">
+                  <label for="url">URL</label>
+                  <input required type="text" class="form-control" id="url" placeholder="URL">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+
+          </div>
+          <div class="col-8 p-3 ">
+
+            <div class="theGiftsCard" id="sandboxGifts">
+              <!-- <div class="row justify-content-evenly">
+                <div class="col-3 card">The Gift</div> -->
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+
+
     </section>
 
 
