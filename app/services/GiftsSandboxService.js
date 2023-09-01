@@ -15,14 +15,23 @@ class GiftsSandboxService {
 
     async openGifts(giftId) {
 
-        const res = await api.put(`api/gifts/${giftId}`)
-        console.log(res.data)
+        let foundGift = AppState.sandboxGifts.find(gift => gift.id == giftId)
+        foundGift.opened = true
+
+        const res = api.put(`/api/gifts/${giftId}`, foundGift)
+        console.log('opening gifts', foundGift, AppState.sandboxGifts)
+        AppState.emit('gifts')
+
+
 
     }
 
     async createGift(formData) {
         const res = await api.post('api/gifts', formData)
-        console.log(res.data, '[Creating Car]')
+        const newGift = new Gift(res.data)
+        console.log(res.data, '[Creating Gift]')
+        AppState.sandboxGifts.push(newGift)
+        AppState.emit('gifts')
     }
 
 }

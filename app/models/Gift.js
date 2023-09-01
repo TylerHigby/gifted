@@ -5,7 +5,7 @@ export class Gift {
         this.id = data.id || ''
         this.tag = data.tag || ''
         this.url = data.url || ''
-        this.opened = true || false
+        this.opened = data.opened || true
         this.creatorId = data.creatorId
         this.updatedAt = data.updatedAt
     }
@@ -13,11 +13,11 @@ export class Gift {
     get giftsTemplate() {
         return /*html*/ `
         
-        <div class="col-3 card">
+        <div class="col-3 m-2 card elevation-5">
         <p>${this.tag}</p>
-        <img src="${this.url}" alt="">
+        <img src="${this.url}" alt="" class="img-fluid">
         <p>${this.opened}</p>
-        <button class="btn btn-success" onclick="app.GiftsSandboxController.openGifts()">Open Gift</button>
+        <button class="btn btn-success" onclick="app.GiftsSandboxController.openGifts('${this.id}')">Open Gift</button>
         </div>
         
         `

@@ -1,7 +1,9 @@
 import { AppState } from "../AppState.js"
+import { api } from "../services/AxiosService.js"
 import { giftsSandboxService } from "../services/GiftsSandboxService.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
+
 
 function _drawSandboxGifts() {
     console.log('drawing gifts')
@@ -31,8 +33,6 @@ export class GiftsSandboxController {
 
     async openGifts(giftId) {
         try {
-            console.log('opening gifts',)
-
             await giftsSandboxService.openGifts(giftId)
         } catch (error) {
             Pop.error(error)
@@ -44,11 +44,13 @@ export class GiftsSandboxController {
         try {
             window.event.preventDefault()
             const form = window.event.target
-            const formData = getFormData(form)
+            const formData = getFormData(formEvent)
+            console.log(formData)
+            formEvent.reset()
             await giftsSandboxService.createGift(formData)
             console.log('creating new gift')
         } catch (error) {
-
+            Pop.error(error)
         }
     }
 
