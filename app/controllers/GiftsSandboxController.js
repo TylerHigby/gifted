@@ -3,6 +3,7 @@ import { api } from "../services/AxiosService.js"
 import { giftsSandboxService } from "../services/GiftsSandboxService.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
+import { getFormData } from "../utils/FormHandler.js"
 
 
 function _drawSandboxGifts() {
@@ -44,9 +45,9 @@ export class GiftsSandboxController {
         try {
             window.event.preventDefault()
             const form = window.event.target
-            const formData = getFormData(formEvent)
+            const formData = getFormData(form)
             console.log(formData)
-            formEvent.reset()
+            form.reset()
             await giftsSandboxService.createGift(formData)
             console.log('creating new gift')
         } catch (error) {
