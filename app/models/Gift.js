@@ -16,7 +16,7 @@ export class Gift {
         <div class="col-3 m-2 card elevation-5">
         <p>${this.tag}</p>
         <img src="${this.url}" alt="" class="img-fluid">
-        <p>${this.opened}</p>
+       
         <button class="btn btn-success" onclick="app.GiftsSandboxController.openGifts('${this.id}')">Open Gift</button>
         </div>
         

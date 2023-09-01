@@ -7,7 +7,7 @@ class ObservableAppState extends EventEmitter {
 
 
 
-  /** @type {import('./models/Gift.js').Gift[]} */
+
   sandboxGifts = []
 
 

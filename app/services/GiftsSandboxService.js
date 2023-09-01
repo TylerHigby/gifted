@@ -20,7 +20,7 @@ class GiftsSandboxService {
 
         const res = api.put(`/api/gifts/${giftId}`, foundGift)
         console.log('opening gifts', foundGift, AppState.sandboxGifts)
-        AppState.emit('gifts')
+        AppState.emit('sandboxGifts')
 
 
 
@@ -31,7 +31,7 @@ class GiftsSandboxService {
         const newGift = new Gift(res.data)
         console.log(res.data, '[Creating Gift]')
         AppState.sandboxGifts.push(newGift)
-        AppState.emit('gifts')
+        AppState.emit('sandboxGifts')
     }
 
 }
